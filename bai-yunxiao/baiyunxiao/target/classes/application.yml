@@ -1,0 +1,13 @@
+#server:
+#  port: 8080
+#
+#logging:
+#    level:
+#      root: info
+#      com.lrm: info
+#      file: logs/info.log
+spring:
+  profiles:
+    active: dev
+
+

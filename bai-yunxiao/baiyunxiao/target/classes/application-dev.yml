@@ -1,0 +1,31 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: info
+    com.softusing.BaiYunXiao: debug
+  file: logs/debug.log
+
+spring:
+  thymeleaf:
+    mode: HTML
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+  jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+
+mybatis:
+  mapper-locations: classpath:mappers/BookMapper.xml
+  type-aliases-package: com.softusing.BaiYunXiao.entity
+
+
+
+
+
