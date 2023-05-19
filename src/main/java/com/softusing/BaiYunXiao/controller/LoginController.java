@@ -1,7 +1,7 @@
 package com.softusing.BaiYunXiao.controller;
 
 import com.softusing.BaiYunXiao.entity.User;
-import com.softusing.BaiYunXiao.form.UserForm;
+//import com.softusing.BaiYunXiao.form.UserForm;
 import com.softusing.BaiYunXiao.mapperIterfac.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -97,21 +97,21 @@ public class LoginController {
     //1.Get 注解 需要注册界面（用户名，密码，确认密钥，邮件，电话号）  2.Post 注解 注册界面里面传值，储存进数据库；3.判断密码
     @GetMapping("/register")
     public String LoginPage(Model model) {
-        model.addAttribute("userForm", new UserForm());
+        model.addAttribute("user", new User());
         return "register";
     }
 
     @PostMapping("/register")
     // BindingResult前端页面检查，省去大量逻辑判断
-    public String returnLoginPage(@Valid UserForm userForm, BindingResult result) {
-        if (!userForm.confirmPassword()) {
-            result.rejectValue("confirmPassword", "error", "两次密码不一致");
-        }
+    public String returnLoginPage(@Valid User user, BindingResult result) {
+//        if (!userForm.confirmPassword()) {
+//            result.rejectValue("confirmPassword", "error", "两次密码不一致");
+//        }
         if (result.hasErrors()) {
             return "register";
         }
-        User user = userForm.convertToUser();
-        userServiceInterface.save(user);
+        User user1 = new User();
+        userServiceInterface.save(user1);
         return "redirect:/login";
     }
 

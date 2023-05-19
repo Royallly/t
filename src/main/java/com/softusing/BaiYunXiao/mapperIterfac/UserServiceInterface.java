@@ -10,5 +10,9 @@ public interface UserServiceInterface {
 
     boolean login(User user);
 
+    List<User> findByPassword(String password);
+
+    List<User> findByUsername(String username);
+
     List<User> findAll();
 }

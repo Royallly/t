@@ -7,7 +7,6 @@ import com.softusing.BaiYunXiao.mapperIterfac.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 //@Service
@@ -26,16 +25,16 @@ public class UserService implements UserServiceInterface {
         return userMapper.insert(user);
     }
 
-    List<User> findByUsername(String username) {
+    public List<User> findByUsername(String username) {
         return userMapper.selectByName(username);
     }
 
-    List<User> findByPassword(String password) {
+    public List<User> findByPassword(String password) {
 
         return userMapper.selectByUserPassword(password);
     }
 
-    public List<User> findAll(){
+    public List<User> findAll() {
         return userMapper.selectByExample(new UserExample());
     }
 
