@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" style="max-width: 600px; margin-top:50px;">
+    <div class="jumbotron">
+        <h2>404</h2>
+        <p>对不起访问的资源<code th:text="${#httpServletRequest.getAttribute('javax.servlet.error.request_uri')}"></code>不存在</p>
+    </div>
+
+</div>
+</body>
+</html>

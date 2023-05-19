@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap-theme.css">
+
+</head>
+<body>
+
+<div class="container" style="max-width: 600px;margin-top:50px">
+    <h3 class="page-header">登 录</h3>
+    <div class="well">
+        <form action="/result" method="get">
+            <div class="form-group">
+                <label for="userNameId">用户名</label>
+                <input type="text" name="userName" id="userNameId" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="passwordId">密码</label>
+                <input type="password" name="password" id="passwordId" class="form-control">
+            </div>
+            <p class="text-left">
+                <button type="submit" class="btn btn-primary">登 录</button>
+                <a href="http://localhost:8080/register">注 册</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+
+</body>
+</html>

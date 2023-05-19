@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+//データベース名：fuga
+//ユーザーID：hoge
+//パスワード：passpass
+//プロジェクト名：test_mybatis
+//schema="fuga"
+-->
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- <classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" /> -->
+
+    <!-- データベースの接続設定 -->
+    <!-- MySQL データベース名：fuga ユーザーID：hoge パスワード：passpassの場合 -->
+    <context id="Tables" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/book"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <!-- プロジェクト名：test_mybatisの場合 -->
+        <!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
+        <javaModelGenerator targetPackage="com.softusing.BaiYunXiao.entity" targetProject="src/main/java">
+
+        </javaModelGenerator>
+
+        <!-- プロジェクト名：test_mybatisの場合 -->
+        <!-- SQL 設定が記述された XML を生成する設定 -->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
+
+        </sqlMapGenerator>
+
+        <!-- マッパークラスを生成する設定
+        XMLMAPPER：MapperインターフェースクラスとMapperファイルのみ生成
+        MIXEDMAPPER：アノテーションを定義したMapperインターフェースクラスとMapperファイルを生成
+        -->
+        <!-- プロジェクト名：test_mybatisの場合 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.softusing.BaiYunXiao.mapperIterfac"
+                             targetProject="src/main/java">
+
+        </javaClientGenerator>
+
+        <!-- コードを生成するテーブルを指定 「%」でワイルドカード -->
+        <!-- <table schema="fuga" tableName="%" > -->
+        <!-- テーブル名を個別に設定する場合（スキーマ名：fuga） -->
+        <table tableName="user_info" domainObjectName="User">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"></generatedKey>
+        </table>
+    </context>
+</generatorConfiguration>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>userLists</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" href="../static/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container"></div>
+<h2> 用户列表 </h2>
+
+<table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>用户名</th>
+        <th>手机号</th>
+        <th>E-mail</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <!--iterStat:
+    count: 计数 从1开始
+    index:索引 从0开始
+    size: 列表总条数
+    even/odd:复数或奇数的判断
+    first/last:第一条/最后一条
+-->
+    <tr th:each="user : ${userList}">
+
+        <!--        <td th:text="${iterStat.count}">1</td>-->
+
+        <!--        另一种方法:-->
+        <!--        <td><a href="#" th:text="${book.name}" th:href="@{/books/{id}(id=${book.id})}">书名</a></td>-->
+        <td><a href="#" th:text="${user.id}"></a></td>
+        <td th:text="${user.userName}"></td>
+        <td th:text="${user.phoneNumber}"></td>
+        <td th:text="${user.email}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+</body>
+
+</html>
